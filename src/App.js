@@ -6,10 +6,13 @@ import SigningAgent from "./components/form/SigningAgent";
 import SignerDetails from "./components/form/SignerDetails";
 import SignerLocation from "./components/form/SignerLocation";
 import Complete from "./components/form/Complete";
+import {StepperContext} from "./components/context/StepperContext";
 
 function App() {
 
     const [currentStep, setCurrentStep] = useState(1)
+    const [userData,setUserData]=useState('');
+    const [finalData,setFinalData]=useState([])
     const steps = [
         "Signing Agent",
         "Details",
@@ -37,9 +40,9 @@ function App() {
         direction === "next" ? newStep++ : newStep--;
         newStep > 0 && newStep <= steps.length && setCurrentStep(newStep)
     }
-    return <div className={"flex"}>
+    return <div className={"container flex border-r-2 border-b-8 border-purple-100 rounded-3xl relative"}>
         <Sidebar/>
-        <div className={"container"}>
+        <div className={"container "}>
 
             <StepperControl
                 handleClick={handleClick}
@@ -49,6 +52,16 @@ function App() {
             <Stepper
                 steps={steps}
                 currentStep={currentStep}/>
+
+            <div className={"my-10"}>
+                <StepperContext.Provider value={{
+                    userData,
+                    setUserData,
+                    finalData,setFinalData
+                }}>
+                    {displayStep(currentStep)}
+                </StepperContext.Provider>
+            </div>
         </div>
 
     </div>

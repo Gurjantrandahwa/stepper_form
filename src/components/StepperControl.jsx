@@ -23,7 +23,7 @@ export default function StepperControl({steps, handleClick, currentStep}) {
                 </p>
             </div>
         </div>
-        <div className={"absolute bottom-20 right-64"}>
+        <div className={"absolute bottom-[-10px] right-16 pb-8"}>
             <button className={"flex items-center"}
                     onClick={() => handleClick("next")}>
                 <p className={"text-violet-900 font-bold mr-4 text-xl"}>

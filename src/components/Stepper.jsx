@@ -72,7 +72,7 @@ export default function Stepper({steps, currentStep}) {
                 <div className={`absolute top-0 text-center mt-16 w-32 text-xs font-medium uppercase
                 ${step.highlighted ? "text-gray-900" : "text-gray-400"}`}>
                     {/* des*/}
-                    {step.description}
+                    {/*{step.description}*/}
                 </div>
             </div>
             <div className={`flex-auto border-t-2 transition duration-500 ease-in-out

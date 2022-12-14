@@ -4,7 +4,7 @@ import {BsFillPersonFill, BsFillTelephoneFill} from "react-icons/bs";
 import {FiMapPin} from "react-icons/fi";
 
 export default function Sidebar() {
-    return <div className={"h-screen w-[30%] p-10 bg-[#26004d] rounded-l-3xl mr-10 flex flex-col items-center"}>
+    return <div className={"h-[140vh] w-[30%] py-4 px-2 bg-[#26004d] rounded-l-3xl mr-10 flex flex-col items-center"}>
         <h3 className={"text-yellow-300 font-bold text-xl text-center"}>
             BeInsurance
         </h3>
