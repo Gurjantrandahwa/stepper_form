@@ -14,7 +14,7 @@ export default function StepperControl({steps, handleClick, currentStep}) {
             <div className={"ml-6"}>
                 <div className={""}>
                     <h1 className={"text-2xl font-normal"}>
-                        <span className={"bg-violet-50 p-1"}>New Appointment Requ</span>est
+                        <span className={"bg-violet-50 p-1"}>New Appointment Request</span>
 
                     </h1>
                 </div>
@@ -23,7 +23,7 @@ export default function StepperControl({steps, handleClick, currentStep}) {
                 </p>
             </div>
         </div>
-        <div className={"absolute bottom-[-10px] right-16 pb-8"}>
+        <div className={"absolute bottom-[-15px] right-16 pb-4"}>
             <button className={"flex items-center"}
                     onClick={() => handleClick("next")}>
                 <p className={"text-violet-900 font-bold mr-4 text-xl"}>
