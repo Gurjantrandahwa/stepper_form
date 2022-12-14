@@ -17,7 +17,7 @@ export default function SigningAgent() {
                         </Button>,
                         input: <><input type={"number"}
                                         min={1}
-                                        className={"bg-purple-50 w-24 h-10 outline-0"}/>
+                                        className={"bg-purple-50 w-24 h-10 outline-0 text-center"}/>
                             <p className={"text-right text-sm text-gray-400"}>per year</p>
                         </>
                     },
@@ -45,7 +45,7 @@ export default function SigningAgent() {
                         input: <>
                             <input type={"number"}
                                    min={1}
-                                   className={"bg-purple-50 w-24 h-10 outline-0"}/>
+                                   className={"bg-purple-50 w-24 h-10 outline-0 text-center"}/>
                             <p className={"text-right text-sm text-gray-400"}>per year</p>
                         </>
                     },
@@ -63,7 +63,7 @@ export default function SigningAgent() {
                 })
             }
         </div>
-        <div className={"border-2 w-1/2 p-4 "}>
+        <div className={"border-2 w-1/2 p-4 shadow "}>
             <h1
                 className={"text-2xl font-semibold rounded text-black-100 text-center text-zinc-700"}
             >Calculate your Costs for Ron!
@@ -75,36 +75,36 @@ export default function SigningAgent() {
                             header: "No of Extra Signatures",
                             description: "Please enter zero if only one signature is required",
                             input1: <input
-                                className={"border-2 outline-0 rounded-xl w-[20%] h-10 "}
+                                className={"border-2 outline-0 rounded-xl w-[20%] h-10 text-center "}
                                 type={"number"}/>
                         },
                         {
                             header: "How many Files will you be uploading in the session",
                             input1: <input
 
-                                className={"border-2 outline-0 rounded-xl w-[30%] h-10 "}
+                                className={"border-2 outline-0 rounded-xl w-[30%] h-10 text-center"}
                                 type={"number"}/>
                         },
                         {
                             header: "Number of Singers",
 
                             input1: <input
-                                className={"border-2 outline-0 rounded-xl w-[30%] h-10"}
+                                className={"border-2 outline-0 rounded-xl w-[30%] h-10 text-center"}
                                 type={"number"}/>
                         },
                         {
                             header: "Don you need Witness?",
                             description: "Please enter zero if only one signature is required",
                             input1: <input
-                                className={"border-2 outline-0 rounded-xl w-[15%] h-10"}
+                                className={"border-2 outline-0 rounded-xl w-[15%] h-10 text-center"}
                                 type={"number"}/>
                         },
 
                     ].map( (value, index) => {
                         return<div key={index} className={"flex mb-4 flex-row justify-between py-2"}>
-                            <div className={"space-x-2"}>
-                                <h1 className={"text-xl"}>{value.header}</h1>
-                                <p>{value.description}</p>
+                            <div className={"flex flex-col"}>
+                                <h1 className={"text-lg"}>{value.header}</h1>
+                                <p className={"text-sm text-zinc-500"}>{value.description}</p>
                             </div>
                             {value.input1}
                         </div>

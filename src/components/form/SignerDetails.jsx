@@ -75,7 +75,7 @@ export default function SignerDetails() {
                             size={"small"}
                             placeholder={"you@example.com"}
                             type="text"
-                            name={"fullName"}
+                            name={"companyName"}
                             onChange={handleChange}/>
                     </div>
                     <div className={"flex flex-col"}>
@@ -86,7 +86,7 @@ export default function SignerDetails() {
                             placeholder={"you@example.com"}
                             className={"border-2 outline-0"}
                             type="number"
-                            name={"phoneNumber"}
+                            name={"agentName"}
                             onChange={handleChange}/>
                     </div>
 
@@ -99,7 +99,7 @@ export default function SignerDetails() {
                             size={"small"}
                             placeholder={"you@example.com"}
                             type="text"
-                            name={"fullName"}
+                            name={"companyEmail"}
                             onChange={handleChange}/>
                     </div>
                     <div className={"flex flex-col"}>
@@ -110,7 +110,7 @@ export default function SignerDetails() {
                             placeholder={"you@example.com"}
                             className={"border-2 outline-0"}
                             type="number"
-                            name={"phoneNumber"}
+                            name={"companyNumber"}
                             onChange={handleChange}/>
                     </div>
 
@@ -131,8 +131,8 @@ export default function SignerDetails() {
                             sx={{width:"330px"}}
                             size={"small"}
                             placeholder={"you@example.com"}
-                            type="text"
-                            name={"fullName"}
+                            type="number"
+                            name={"loanNo"}
                             onChange={handleChange}/>
                     </div>
                     <div className={"flex flex-col"}>
@@ -143,7 +143,7 @@ export default function SignerDetails() {
                             placeholder={"you@example.com"}
                             className={"border-2 outline-0"}
                             type="text"
-                            name={"phoneNumber"}
+                            name={"propertyAddress"}
                             onChange={handleChange}/>
                     </div>
 

@@ -3,6 +3,7 @@ import {IoIosArrowBack} from "react-icons/io";
 import {GrLinkNext} from "react-icons/gr";
 
 export default function StepperControl({steps, handleClick, currentStep}) {
+
     return <div className={"mt-4 static"}>
         <div className={"flex"}>
             <button
@@ -27,7 +28,7 @@ export default function StepperControl({steps, handleClick, currentStep}) {
             <button className={"flex items-center"}
                     onClick={() => handleClick("next")}>
                 <p className={"text-violet-900 font-bold mr-4 text-xl"}>
-                    {currentStep===steps.length-1?"Confirm":"Next Step"}
+                    {currentStep === steps.length - 1 ? "Confirm" : "Next Step"}
                 </p>
                 <div className={"bg-yellow-200 p-2 rounded-full"}>
                     <GrLinkNext className={"text-violet-900 text-xl"}/>
