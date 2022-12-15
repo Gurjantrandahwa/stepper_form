@@ -5,6 +5,7 @@ import {BsArrowRight} from "react-icons/bs";
 export default function SigningAgent() {
 
     return <div className={"flex gap-4"}>
+
         <div className={'flex flex-col'}>
             {
                 [
@@ -113,7 +114,8 @@ export default function SigningAgent() {
             </div>
             <h1
                 className={"text-right font-bold text-xl mx-4 py-4 text-zinc-500 capitalize"}
-            >Your appointment quote: $59</h1>
+            >Your appointment quote: $59
+            </h1>
         </div>
     </div>
 }

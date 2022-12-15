@@ -9,7 +9,6 @@ import Complete from "./components/form/Complete";
 import {StepperContext} from "./components/context/StepperContext";
 
 function App() {
-
     const [currentStep, setCurrentStep] = useState(1)
     const [userData,setUserData]=useState('');
     const [finalData,setFinalData]=useState([])
@@ -57,7 +56,8 @@ function App() {
                 <StepperContext.Provider value={{
                     userData,
                     setUserData,
-                    finalData,setFinalData
+                    finalData,
+                    setFinalData
                 }}>
                     {displayStep(currentStep)}
                 </StepperContext.Provider>

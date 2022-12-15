@@ -8,7 +8,9 @@ export default function SignerLocation() {
     const URL = "https://notaryapp-staging.herokuapp.com/plugin/posts";
     const createPost = () => {
         axios
-            .post(URL, {})
+            .post(URL, {
+            //    data
+            })
             .then((res) => {
                 setPost(res.data)
             })
@@ -45,7 +47,7 @@ export default function SignerLocation() {
                         size={"small"}
                         placeholder={"you@example.com"}
                         type="date"
-                        name={"fullName"}
+                        name={"date"}
                     />
                 </div>
                 <div className={"flex flex-col"}>
@@ -56,7 +58,7 @@ export default function SignerLocation() {
                         placeholder={"you@example.com"}
                         className={"border-2 outline-0"}
                         type="time"
-                        name={"phoneNumber"}
+                        name={"time"}
                     />
                 </div>
 
