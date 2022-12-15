@@ -16,7 +16,7 @@ export default function SignerLocation() {
         axios
             .post(URL, {
             //    data
-                userData
+        ...userData
             })
             .then((res) => {
                 setUserData(res.data)
@@ -27,7 +27,7 @@ export default function SignerLocation() {
         axios.get(`${URL}/1`).then((response) => {
             setUserData(response.data);
         });
-    }, []);
+    }, [userData]);
     return <div className={"border-2 border-black p-4 bg-white h-[100vh]"}>
         <form>
             <div className={"flex items-center mb-2"}>
@@ -49,11 +49,11 @@ export default function SignerLocation() {
                     required
                 />
             </div>
-            <div className={"flex items-center gap-28"}>
-                <div className={"flex flex-col py-4"}>
+            <div className={"grid gap-4 grid-cols-1 lg:grid-cols-3 mt-6"}>
+                <div>
                     <label className={"pb-2 text-md"}>Date</label>
                     <TextField
-                        sx={{width: "330px"}}
+                        sx={{width: "100%"}}
                         size={"small"}
                         placeholder={"you@example.com"}
                         type="date"
@@ -63,10 +63,10 @@ export default function SignerLocation() {
                         required
                     />
                 </div>
-                <div className={"flex flex-col"}>
+                <div>
                     <label className={"pb-2 text-md"}>Time</label>
                     <TextField
-                        sx={{width: "330px"}}
+                        sx={{width: "100%"}}
                         size={"small"}
                         placeholder={"you@example.com"}
                         className={"border-2 outline-0"}

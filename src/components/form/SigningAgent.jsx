@@ -59,9 +59,10 @@ export default function SigningAgent() {
                                 input: <>
                                     <input type={"number"}
                                            onChange={handleChange}
-                                           value={userData["mobileNotary"] || ""}
-                                           name={"mobileNotary"}
+                                           value={userData["mobileGeneral"] || ""}
+                                           name={"mobileGeneral"}
                                            min={0}
+
                                            className={"bg-purple-50 w-24 h-10 outline-0 text-center"}/>
                                     <p className={"text-right text-sm text-gray-400"}>per year</p>
                                 </>
@@ -71,7 +72,7 @@ export default function SigningAgent() {
                                         className={`flex py-4 border-2 rounded-xl p-4 mb-4 items-center shadow
                                 ${index === 1 ? "bg-yellow-100 border-2 border-purple-400 shadow" : ""}`}>
                                 <div className={"max-w-[320px] "}>
-                                    <h1 className={`text-3xl bg-purple-50 mr-2 p-1 text-zinc-700`}>{value.name}</h1>
+                                    <h1 className={`text-[28px] bg-purple-50 mr-2 p-1 text-zinc-700`}>{value.name}</h1>
                                     <p className={"text-[15px] text-gray-400 font"}>{value.description}</p>
                                     {value.button}
                                 </div>
