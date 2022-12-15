@@ -6,6 +6,7 @@ import {StepperContext} from "../context/StepperContext";
 
 export default function SignerLocation() {
     const [submit, setSubmit] = useState("")
+
     const {userData, setUserData} = useContext(StepperContext);
     const handleChange = (e) => {
         const {name, value} = e.target;
@@ -44,7 +45,7 @@ export default function SignerLocation() {
         <form>
             {
                 submit &&
-                <Alert className={"alert"} severity="success">{submit}</Alert>
+                <Alert severity="success">{submit}</Alert>
             }
 
             <div className={"flex items-center mb-2"}>
