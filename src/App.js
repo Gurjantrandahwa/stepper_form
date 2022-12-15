@@ -39,9 +39,9 @@ function App() {
         direction === "next" ? newStep++ : newStep--;
         newStep > 0 && newStep <= steps.length && setCurrentStep(newStep)
     }
-    return <div className={"container flex border-r-2 border-b-8 border-purple-100 rounded-3xl relative"}>
+    return <div className={"container flex border-r-2 border-b-8 border-purple-100 rounded-3xl relative mx-auto"}>
         <Sidebar/>
-        <div className={"container "}>
+        <div className={""}>
 
             <StepperControl
                 handleClick={handleClick}
