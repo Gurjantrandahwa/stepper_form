@@ -1,24 +1,31 @@
-import React, {useEffect, useState} from "react";
+import React, {useContext, useEffect} from "react";
 import {BsPersonCheck} from "react-icons/bs";
 import {Button, TextField} from "@mui/material";
 import axios from "axios";
+import {StepperContext} from "../context/StepperContext";
 
 export default function SignerLocation() {
-    const [post, setPost] = useState(null);
-    const URL = "https://notaryapp-staging.herokuapp.com/plugin/posts";
+    const {userData, setUserData} = useContext(StepperContext);
+    const handleChange = (e) => {
+        const {name, value} = e.target;
+        setUserData({...userData, [name]: value})
+    }
+
+    const URL = "https://notaryapp-staging.herokuapp.com/plugin/userdata";
     const createPost = () => {
         axios
             .post(URL, {
             //    data
+                userData
             })
             .then((res) => {
-                setPost(res.data)
+                setUserData(res.data)
             })
     }
 
     useEffect(() => {
         axios.get(`${URL}/1`).then((response) => {
-            setPost(response.data);
+            setUserData(response.data);
         });
     }, []);
     return <div className={"border-2 border-black p-4 bg-white h-[100vh]"}>
@@ -36,7 +43,10 @@ export default function SignerLocation() {
                     size={"small"}
                     placeholder={"you@example.com"}
                     type="text"
-                    name={"email"}
+                    name={"location"}
+                    onChange={handleChange}
+                    value={userData["location"] || ""}
+                    required
                 />
             </div>
             <div className={"flex items-center gap-28"}>
@@ -48,6 +58,9 @@ export default function SignerLocation() {
                         placeholder={"you@example.com"}
                         type="date"
                         name={"date"}
+                        onChange={handleChange}
+                        value={userData["date"] || ""}
+                        required
                     />
                 </div>
                 <div className={"flex flex-col"}>
@@ -59,6 +72,9 @@ export default function SignerLocation() {
                         className={"border-2 outline-0"}
                         type="time"
                         name={"time"}
+                        onChange={handleChange}
+                        value={userData["time"] || ""}
+                        required
                     />
                 </div>
 
@@ -79,7 +95,5 @@ export default function SignerLocation() {
                 </Button>
             </div>
         </form>
-
-
     </div>
 }
