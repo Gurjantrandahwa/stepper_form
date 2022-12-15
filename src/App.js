@@ -7,6 +7,7 @@ import SignerDetails from "./components/form/SignerDetails";
 import SignerLocation from "./components/form/SignerLocation";
 import Complete from "./components/form/Complete";
 import {StepperContext} from "./components/context/StepperContext";
+import {GrLinkNext} from "react-icons/gr";
 
 function App() {
     const [currentStep, setCurrentStep] = useState(1)
@@ -39,10 +40,9 @@ function App() {
         direction === "next" ? newStep++ : newStep--;
         newStep > 0 && newStep <= steps.length && setCurrentStep(newStep)
     }
-    return <div className={"container flex border-r-2 border-b-8 border-purple-100 rounded-3xl relative mx-auto"}>
+    return <div className={"container my-4 flex border-r-2 border-b-8 border-purple-100 rounded-3xl relative mx-auto h-auto md:h-[95vh] "}>
         <Sidebar/>
-        <div className={""}>
-
+        <div className={"p-4 h-full w-full flex flex-col"}>
             <StepperControl
                 handleClick={handleClick}
                 currentStep={currentStep}
@@ -52,15 +52,34 @@ function App() {
                 steps={steps}
                 currentStep={currentStep}/>
 
-            <div className={"my-10"}>
+            <div className={"my-2 overflow-auto flex-auto"}>
                 <StepperContext.Provider value={{
-                    userData,
-                    setUserData,
-                    finalData,
-                    setFinalData
+                    userData:userData,
+                    setUserData:setUserData,
+                    finalData:finalData,
+                    setFinalData:setFinalData
                 }}>
-                    {displayStep(currentStep)}
+                    <div className="">
+
+                        {displayStep(currentStep)}
+                    </div>
+
+
                 </StepperContext.Provider>
+            </div>
+            <div className={` flex justify-end ${currentStep === 4 ? "hidden" : ""}`}>
+                <div className="">
+                    <button className={"flex items-center"}
+                            onClick={() => handleClick("next")}>
+                        <p className={"text-violet-900 font-bold mr-4 text-xl"}>
+                            {currentStep === steps.length - 1 ? "Confirm" : "Next Step"}
+                        </p>
+                        <div className={"bg-yellow-200 p-2 rounded-full"}>
+                            <GrLinkNext className={"text-violet-900 text-xl"}/>
+                        </div>
+                    </button>
+                </div>
+
             </div>
         </div>
 

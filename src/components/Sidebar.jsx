@@ -4,7 +4,8 @@ import {BsFillPersonFill, BsFillTelephoneFill} from "react-icons/bs";
 import {FiMapPin} from "react-icons/fi";
 
 export default function Sidebar() {
-    return <div className={"h-[140vh] w-80 py-4 px-2 bg-[#26004d] rounded-l-3xl mr-10 flex flex-col items-center"}>
+    return <div
+        className={"h-100 w-2/6 py-4 px-2 bg-[#26004d] rounded-l-3xl flex flex-col items-center hidden md:block"}>
         <h3 className={"text-yellow-300 font-bold text-xl text-center"}>
             BeInsurance
         </h3>
@@ -16,7 +17,7 @@ export default function Sidebar() {
         >
             Jacob Jones
         </h1>
-        <div className={"mt-8 flex flex-col"}>
+        <div className={"mt-8 ml-6"}>
             {
                 [
                     {

@@ -37,22 +37,21 @@ export default function SignerDetails() {
 
                     <hr className={"border-t-2 border-black py-2"}/>
 
-                    <div className={"flex items-center gap-28"}>
-                        <div className={"flex flex-col py-4"}>
+                    <div className={"grid gap-4 grid-cols-1 lg:grid-cols-3"}>
+                        <div>
                             <label className={"pb-2 text-md"}>Full Name</label>
                             <TextField
-
-                                sx={{width: "330px"}}
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 type="text"
                                 name={"fullName"}
                             />
                         </div>
-                        <div className={"flex flex-col"}>
+                        <div>
                             <label className={"pb-2 text-md"}>Phone Number</label>
                             <TextField
-                                sx={{width: "330px"}}
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 className={"border-2 outline-0"}
@@ -62,10 +61,10 @@ export default function SignerDetails() {
                         </div>
 
                     </div>
-                    <div className={"flex flex-col"}>
-                        <label className={"pb-2 text-md"}>Email</label>
+                    <div className={"mt-4"}>
+                        <label className={"pb-2 text-md "}>Email</label>
                         <TextField
-                            sx={{width: "330px"}}
+                            sx={{width: "100%",marginTop:"5px"}}
                             size={"small"}
                             placeholder={"you@example.com"}
                             type="text"
@@ -82,21 +81,21 @@ export default function SignerDetails() {
                     </div>
 
                     <hr className={"border-t-2 border-black py-2"}/>
-                    <div className={"flex items-center gap-28"}>
-                        <div className={"flex flex-col py-4"}>
+                    <div className={"grid gap-4 grid-cols-1 lg:grid-cols-3"}>
+                        <div>
                             <label className={"pb-2 text-md"}>Company Name</label>
                             <TextField
-                                sx={{width: "330px"}}
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 type="text"
                                 name={"companyName"}
                             />
                         </div>
-                        <div className={"flex flex-col"}>
+                        <div>
                             <label className={"pb-2 text-md"}>Agent Name</label>
                             <TextField
-                                sx={{width: "330px"}}
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 className={"border-2 outline-0"}
@@ -106,21 +105,21 @@ export default function SignerDetails() {
                         </div>
 
                     </div>
-                    <div className={"flex items-center gap-28"}>
-                        <div className={"flex flex-col py-4"}>
+                    <div className={"grid gap-4 grid-cols-1 lg:grid-cols-3"}>
+                        <div>
                             <label className={"pb-2 text-md"}>Email</label>
                             <TextField
-                                sx={{width: "330px"}}
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 type="text"
                                 name={"companyEmail"}
                             />
                         </div>
-                        <div className={"flex flex-col"}>
+                        <div>
                             <label className={"pb-2 text-md"}>Phone Number</label>
                             <TextField
-                                sx={{width: "330px"}}
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 className={"border-2 outline-0"}
@@ -139,21 +138,22 @@ export default function SignerDetails() {
                     </div>
 
                     <hr className={"border-t-2 border-black py-2"}/>
-                    <div className={"flex items-center gap-28"}>
-                        <div className={"flex flex-col py-4"}>
-                            <label className={"pb-2 text-md"}>Escrow# /Loan No</label>
+                    <div className={"grid gap-4 grid-cols-1 lg:grid-cols-3"}>
+                        <div>
+                            <label className={"pb-2 text-md mb-2"}>Escrow# /Loan No</label>
                             <TextField
-                                sx={{width: "330px"}}
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 type="number"
                                 name={"loanNo"}
                             />
                         </div>
-                        <div className={"flex flex-col"}>
-                            <label className={"pb-2 text-md"}>Property Address</label>
+                        <div>
+                            <label className={""}>Property Address</label>
                             <TextField
-                                sx={{width: "330px"}}
+
+                                sx={{width: "100%",marginTop:"5px"}}
                                 size={"small"}
                                 placeholder={"you@example.com"}
                                 className={"border-2 outline-0"}
