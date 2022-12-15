@@ -1,35 +1,52 @@
-import React, {useContext, useEffect} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {BsPersonCheck} from "react-icons/bs";
-import {Button, TextField} from "@mui/material";
+import {Alert, Button, TextField} from "@mui/material";
 import axios from "axios";
 import {StepperContext} from "../context/StepperContext";
 
 export default function SignerLocation() {
+    const [submit, setSubmit] = useState("")
     const {userData, setUserData} = useContext(StepperContext);
     const handleChange = (e) => {
         const {name, value} = e.target;
         setUserData({...userData, [name]: value})
+
     }
 
-    const URL = "https://notaryapp-staging.herokuapp.com/plugin/userdata";
+    const URL = "https://notaryapp-staging.herokuapp.com/plugin/submitApptDetails";
     const createPost = () => {
+
         axios
             .post(URL, {
-            //    data
-        ...userData
+                //    data
+                ...userData
             })
             .then((res) => {
                 setUserData(res.data)
             })
+        if (userData){
+            setSubmit("Your data is submitted")
+        }else {
+            setSubmit("Please enter details")
+        }
+
+
     }
+
 
     useEffect(() => {
         axios.get(`${URL}/1`).then((response) => {
-            setUserData(response.data);
+            setUserData(response.data)
+            setSubmit("Your data is submitted")
         });
-    }, [userData]);
+    }, []);
     return <div className={"border-2 border-black p-4 bg-white h-[100vh]"}>
         <form>
+            {
+                submit &&
+                <Alert className={"alert"} severity="success">{submit}</Alert>
+            }
+
             <div className={"flex items-center mb-2"}>
                 <BsPersonCheck className={"text-2xl mr-2"}/>
                 <h1 className={"text-xl text-zinc-700"}>Signing Location</h1>
@@ -80,6 +97,7 @@ export default function SignerLocation() {
 
             </div>
             <div className={"mt-12 mx-auto text-center"}>
+
                 <Button
                     onClick={createPost}
                     sx={{
@@ -93,6 +111,8 @@ export default function SignerLocation() {
                 >
                     Schdule Appointment
                 </Button>
+
+
             </div>
         </form>
     </div>
